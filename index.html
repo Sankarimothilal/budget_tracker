@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+</head>
+<body>
+    <div align="center">
+    <h1>Personal Budget Tracker</h1>
+    <a href="#">Add Income/Expense</a>
+    <br>
+    <a href="#">View Budget Summary</a>
+    <h2>Welcome to the Personal Budget Tracker</h2>
+    <p>This Tracker helps you manage your monthly income and expenses. You can add new entries and view a detailed summary of your budget.</p>
+    <h2>Add New Income or Expenses</h2>
+    <form id="budgetForm">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" required><br><br>
+
+        <label for="category">Category:</label>
+        <select id="category" required>
+            <option value="food">Food</option>
+            <option value="salary">Salary</option>
+            <option value="transportation">Transportation</option>
+            <option value="entertainment">Entertainment</option>
+        </select><br><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" required><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" required><br><br>
+
+        <label>Type:</label>
+        <input type="radio" name="type" value="Income" required> Income
+        <input type="radio" name="type" value="Expense" required> Expense<br><br>
+
+        <button type="submit">Add Entry</button>
+    </form>
+
+    <h3>Budget Summary</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="budgetTable">
+            <tr>
+                <td>Food</td>
+                <td>$200</td>
+                <td>Groceries for the week</td>
+                <td>2025-02-01</td>
+                <td>Expense</td>
+                <td><button onclick="editEntry(this)">Edit</button> <button onclick="deleteEntry(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <td>$3000</td>
+                <td>Monthly salary</td>
+                <td>2025-02-01</td>
+                <td>Income</td>
+                <td><button onclick="editEntry(this)">Edit</button> <button onclick="deleteEntry(this)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>
